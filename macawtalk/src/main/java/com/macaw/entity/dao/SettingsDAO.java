@@ -19,19 +19,22 @@ public class SettingsDAO {
 		for(String str : columns){
 			selection.concat(str + ",");
 		}
-		Query query = sessionFactory.openSession().createSQLQuery("select " + selection.trim() + " from Settings");
-		sessionFactory.openSession().close();
+		Query query = sessionFactory.openSession().createSQLQuery("SELECT " + selection.trim() + " FROM Settings");
 		return query.list();
 	}
 	
-	public List<Settings> querySettingsList(String[] columns, String where, String[] selectionArgs)
+	public List<Settings> querySettingsList(String[] columns, String where, String... whereArgs)
 	{
 		String selection = "";
 		for(String str : columns){
 			selection.concat(str + ",");
 		}
-		Query query = sessionFactory.openSession().createSQLQuery("select " + selection.trim() + " from Settings where " + where);//.setParameter();
-		sessionFactory.openSession().close();
+		String[] whereArray = where.split("?");
+		String whereClause = "";
+		for(int i=0; i<whereArgs.length; i++){
+			whereClause += whereArray[i] + "'" + whereArgs[i] + "'";
+		}
+		Query query = sessionFactory.openSession().createSQLQuery("SELECT " + selection.trim() + " FROM Settings WHERE " + whereClause);
 		return query.list();
 	}
 }

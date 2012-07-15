@@ -3,4 +3,5 @@
 
 <hibernate-reverse-engineering>
   <table-filter match-catalog="macaw" match-name="settings"/>
+  <table-filter match-catalog="macaw" match-name="user"/>
 </hibernate-reverse-engineering>

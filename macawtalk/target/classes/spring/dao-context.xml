@@ -14,9 +14,9 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-3.1.xsd ">
 	
-	<!-- Support @Resource annotation -->
+	<!-- Support annotation dependency injection -->
 	<context:annotation-config/>
-	<context:component-scan base-package="com.macaw"/>
+	<context:component-scan base-package="com.macaw.entity"/>
 	
 	<!-- Set sessionFactory and the dataSource is JNDI -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -29,6 +29,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.macaw.entity.Settings</value>
+				<value>com.macaw.entity.User</value>
 			</list>
 		</property>
 	</bean>

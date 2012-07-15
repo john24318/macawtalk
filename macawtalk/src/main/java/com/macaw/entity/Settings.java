@@ -1,10 +1,12 @@
 package com.macaw.entity;
 
-// Generated 2012/7/14 ¤U¤È 07:22:58 by Hibernate Tools 3.4.0.CR1
+// Generated 2012/7/15 ¤U¤È 10:39:42 by Hibernate Tools 3.4.0.CR1
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -14,9 +16,7 @@ import javax.persistence.Table;
 @Table(name = "settings", catalog = "macaw")
 public class Settings implements java.io.Serializable {
 
-	private String setkey;
-	private String setname;
-	private String setdesc;
+	private SettingsId id;
 	private Integer setn1;
 	private Integer setn2;
 	private String setc1;
@@ -26,16 +26,13 @@ public class Settings implements java.io.Serializable {
 	public Settings() {
 	}
 
-	public Settings(String setkey) {
-		this.setkey = setkey;
+	public Settings(SettingsId id) {
+		this.id = id;
 	}
 
-	public Settings(String setkey, String setname, String setdesc,
-			Integer setn1, Integer setn2, String setc1, String setc2,
-			String setc3) {
-		this.setkey = setkey;
-		this.setname = setname;
-		this.setdesc = setdesc;
+	public Settings(SettingsId id, Integer setn1, Integer setn2, String setc1,
+			String setc2, String setc3) {
+		this.id = id;
 		this.setn1 = setn1;
 		this.setn2 = setn2;
 		this.setc1 = setc1;
@@ -43,32 +40,17 @@ public class Settings implements java.io.Serializable {
 		this.setc3 = setc3;
 	}
 
-	@Id
-	@Column(name = "SETKEY", unique = true, nullable = false, length = 10)
-	public String getSetkey() {
-		return this.setkey;
+	@EmbeddedId
+	@AttributeOverrides({
+			@AttributeOverride(name = "setkey", column = @Column(name = "SETKEY", nullable = false, length = 10)),
+			@AttributeOverride(name = "setdesc", column = @Column(name = "SETDESC", nullable = false, length = 50)),
+			@AttributeOverride(name = "setname", column = @Column(name = "SETNAME", nullable = false, length = 30)) })
+	public SettingsId getId() {
+		return this.id;
 	}
 
-	public void setSetkey(String setkey) {
-		this.setkey = setkey;
-	}
-
-	@Column(name = "SETNAME", length = 30)
-	public String getSetname() {
-		return this.setname;
-	}
-
-	public void setSetname(String setname) {
-		this.setname = setname;
-	}
-
-	@Column(name = "SETDESC", length = 50)
-	public String getSetdesc() {
-		return this.setdesc;
-	}
-
-	public void setSetdesc(String setdesc) {
-		this.setdesc = setdesc;
+	public void setId(SettingsId id) {
+		this.id = id;
 	}
 
 	@Column(name = "SETN1")
