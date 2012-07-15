@@ -4,9 +4,9 @@
   
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:config/action-context.xml,
-                 classpath:config/service-context.xml,
-                 classpath:config/dao-context.xml
+    <param-value>classpath:spring/action-context.xml,
+                 classpath:spring/service-context.xml,
+                 classpath:spring/dao-context.xml
     </param-value>
   </context-param>
   <listener>

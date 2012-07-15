@@ -25,12 +25,6 @@
   		<version>2.3.4</version>
   	</dependency>
   	<dependency>
-  		<groupId>org.hibernate</groupId>
-  		<artifactId>hibernate</artifactId>
-  		<version>3.5.4-Final</version>
-  		<type>pom</type>
-  	</dependency>
-  	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-context</artifactId>
   		<version>3.1.2.RELEASE</version>
@@ -76,15 +70,10 @@
   		<version>3.1.2.RELEASE</version>
   	</dependency>
   	<dependency>
-  		<groupId>org.springframework</groupId>
-  		<artifactId>spring-hibernate3</artifactId>
-  		<version>2.0.8</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.hibernate.javax.persistence</groupId>
-  		<artifactId>hibernate-jpa-2.1-api</artifactId>
-  		<version>1.0.0.Draft-6</version>
-  	</dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-core</artifactId>
+    	<version>4.1.4.Final</version>
+    </dependency>
   	<dependency>
   		<groupId>mysql</groupId>
   		<artifactId>mysql-connector-java</artifactId>
@@ -124,5 +113,30 @@
   </dependencies>
   <build>
     <finalName>macawtalk</finalName>
+
+    <plugins>
+    	<plugin>
+        	<groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <configuration>
+	            <containerConfigXML>src/main/webapp/META-INF/context.xml</containerConfigXML>
+	            <archive>
+	            	<manifestFile>src/main/webapp/META-INF/MANIFEST.MF</manifestFile>
+	            	<manifest>
+	            		<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+	                	<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+	            	</manifest>
+	            </archive>
+	            <webResources>
+		            <resource>
+			           	<directory>src/main/webapp/META-INF</directory>
+			           	<filtering>true</filtering>
+			           	<targetPath>META-INF</targetPath>
+			        </resource>
+				</webResources>
+			</configuration>
+		</plugin>
+	</plugins>
+
   </build>
 </project>

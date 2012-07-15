@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context>
+    <Resource name="jdbc/macaw" auth="Container" type="javax.sql.DataSource"
+        driverClassName="org.gjt.mm.mysql.Driver" url="jdbc:mysql://localhost:3306/macaw"
+        username="root" password="admin" maxWait="10000" maxIdle="30" maxActive="100" />
+
+    <!--
+        <Resource name="${jdbc.name}" auth="Container" type="${datasource.type}"
+            driverClassName="${database.driver}" url="${database.url}"
+            username="${database.username}" password="${database.password}" maxWait="10000" maxIdle="30" maxActive="100" />
+            -->
+    
+</context>
