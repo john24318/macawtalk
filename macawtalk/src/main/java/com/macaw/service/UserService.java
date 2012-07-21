@@ -4,33 +4,34 @@ import java.util.Iterator;
 
 import com.macaw.entity.User;
 import com.macaw.entity.dao.UserDAO;
+import com.macaw.entity.dao.UserDAOImp;
 
 public class UserService {
 	private UserDAO dao;
 	
 	public UserService()
 	{
-		dao = new UserDAO();
+		dao = new UserDAOImp();
 	}
 	
 	public boolean checkUser(String username){
-		Iterator<User> iterator = dao.queryUserList(new String[]{"username"},"username=?",username).iterator();
-		while(iterator.hasNext()){
+		User user = dao.findUserByName(username);
+		if(user == null)
+			return false;
+		else
 			return true;
-		}
-		return false;
 	}
 	
 	public void register(String username, String password, String email1){
-		User u = new User();
-		u.setUsername(username);
-		u.setPassword(password);
-		u.setEmail1(email1);
-		dao.insertUser(u);
+		User user = new User();
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setEmail1(email1);
+		dao.saveUser(user);
 	}
 	
 	public User login(String username, String password){
-		Iterator<User> iterator = dao.queryUserList(new String[]{"*"},"username=? and password=?",username,password).iterator();
+		Iterator<User> iterator = dao.findUser("username=? and password=?", username, password).iterator();
 		while(iterator.hasNext()){
 			return iterator.next();
 		}
