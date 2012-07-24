@@ -11,7 +11,6 @@
     <table>
         <s:iterator value="settingsList" status="i">
             <tr>
-            	<td><s:property value="setkey"/></td>
                 <td><s:property value="setname"/></td>
                 <td><s:property value="setdesc"/></td>
             </tr>

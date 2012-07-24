@@ -1,6 +1,6 @@
 package com.macaw.entity;
 
-// Generated 2012/7/15 ¤U¤È 10:39:42 by Hibernate Tools 3.4.0.CR1
+// Generated 2012/7/17 ¤U¤È 09:38:47 by Hibernate Tools 3.4.0.CR1
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -42,9 +42,9 @@ public class Settings implements java.io.Serializable {
 
 	@EmbeddedId
 	@AttributeOverrides({
-			@AttributeOverride(name = "setkey", column = @Column(name = "SETKEY", nullable = false, length = 10)),
-			@AttributeOverride(name = "setdesc", column = @Column(name = "SETDESC", nullable = false, length = 50)),
-			@AttributeOverride(name = "setname", column = @Column(name = "SETNAME", nullable = false, length = 30)) })
+			@AttributeOverride(name = "setkey", column = @Column(name = "setkey", nullable = false, length = 10)),
+			@AttributeOverride(name = "setdesc", column = @Column(name = "setdesc", nullable = false, length = 50)),
+			@AttributeOverride(name = "setname", column = @Column(name = "setname", nullable = false, length = 30)) })
 	public SettingsId getId() {
 		return this.id;
 	}
@@ -53,7 +53,7 @@ public class Settings implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "SETN1")
+	@Column(name = "setn1")
 	public Integer getSetn1() {
 		return this.setn1;
 	}
@@ -62,7 +62,7 @@ public class Settings implements java.io.Serializable {
 		this.setn1 = setn1;
 	}
 
-	@Column(name = "SETN2")
+	@Column(name = "setn2")
 	public Integer getSetn2() {
 		return this.setn2;
 	}
@@ -71,7 +71,7 @@ public class Settings implements java.io.Serializable {
 		this.setn2 = setn2;
 	}
 
-	@Column(name = "SETC1", length = 100)
+	@Column(name = "setc1", length = 100)
 	public String getSetc1() {
 		return this.setc1;
 	}
@@ -80,7 +80,7 @@ public class Settings implements java.io.Serializable {
 		this.setc1 = setc1;
 	}
 
-	@Column(name = "SETC2", length = 100)
+	@Column(name = "setc2", length = 100)
 	public String getSetc2() {
 		return this.setc2;
 	}
@@ -89,7 +89,7 @@ public class Settings implements java.io.Serializable {
 		this.setc2 = setc2;
 	}
 
-	@Column(name = "SETC3", length = 100)
+	@Column(name = "setc3", length = 100)
 	public String getSetc3() {
 		return this.setc3;
 	}

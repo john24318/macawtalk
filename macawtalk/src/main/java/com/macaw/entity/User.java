@@ -1,6 +1,6 @@
 package com.macaw.entity;
 
-// Generated 2012/7/15 ¤U¤È 10:39:42 by Hibernate Tools 3.4.0.CR1
+// Generated 2012/7/17 ¤U¤È 09:38:47 by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -62,7 +62,7 @@ public class User implements java.io.Serializable {
 	}
 
 	@Id
-	@Column(name = "USERNAME", unique = true, nullable = false, length = 50)
+	@Column(name = "username", unique = true, nullable = false, length = 50)
 	public String getUsername() {
 		return this.username;
 	}
@@ -71,7 +71,7 @@ public class User implements java.io.Serializable {
 		this.username = username;
 	}
 
-	@Column(name = "PASSWORD", length = 30)
+	@Column(name = "password", length = 30)
 	public String getPassword() {
 		return this.password;
 	}
@@ -80,7 +80,7 @@ public class User implements java.io.Serializable {
 		this.password = password;
 	}
 
-	@Column(name = "EMAIL1", length = 50)
+	@Column(name = "email1", length = 50)
 	public String getEmail1() {
 		return this.email1;
 	}
@@ -89,7 +89,7 @@ public class User implements java.io.Serializable {
 		this.email1 = email1;
 	}
 
-	@Column(name = "EMAIL2", length = 50)
+	@Column(name = "email2", length = 50)
 	public String getEmail2() {
 		return this.email2;
 	}
@@ -98,7 +98,7 @@ public class User implements java.io.Serializable {
 		this.email2 = email2;
 	}
 
-	@Column(name = "NICKNAME", length = 50)
+	@Column(name = "nickname", length = 50)
 	public String getNickname() {
 		return this.nickname;
 	}
@@ -107,7 +107,7 @@ public class User implements java.io.Serializable {
 		this.nickname = nickname;
 	}
 
-	@Column(name = "SECRETQES", length = 100)
+	@Column(name = "secretqes", length = 100)
 	public String getSecretqes() {
 		return this.secretqes;
 	}
@@ -116,7 +116,7 @@ public class User implements java.io.Serializable {
 		this.secretqes = secretqes;
 	}
 
-	@Column(name = "SECRETANS", length = 50)
+	@Column(name = "secretans", length = 50)
 	public String getSecretans() {
 		return this.secretans;
 	}
@@ -125,7 +125,7 @@ public class User implements java.io.Serializable {
 		this.secretans = secretans;
 	}
 
-	@Column(name = "SEX", length = 1)
+	@Column(name = "sex", length = 1)
 	public String getSex() {
 		return this.sex;
 	}
@@ -134,7 +134,7 @@ public class User implements java.io.Serializable {
 		this.sex = sex;
 	}
 
-	@Column(name = "COUNTRY", length = 10)
+	@Column(name = "country", length = 10)
 	public String getCountry() {
 		return this.country;
 	}
@@ -143,7 +143,7 @@ public class User implements java.io.Serializable {
 		this.country = country;
 	}
 
-	@Column(name = "TEL", length = 45)
+	@Column(name = "tel", length = 45)
 	public String getTel() {
 		return this.tel;
 	}
@@ -152,7 +152,7 @@ public class User implements java.io.Serializable {
 		this.tel = tel;
 	}
 
-	@Column(name = "MOBILE", length = 45)
+	@Column(name = "mobile", length = 45)
 	public String getMobile() {
 		return this.mobile;
 	}
@@ -161,7 +161,7 @@ public class User implements java.io.Serializable {
 		this.mobile = mobile;
 	}
 
-	@Column(name = "ADDRESS", length = 150)
+	@Column(name = "address", length = 150)
 	public String getAddress() {
 		return this.address;
 	}
@@ -170,7 +170,7 @@ public class User implements java.io.Serializable {
 		this.address = address;
 	}
 
-	@Column(name = "VOCATION", length = 20)
+	@Column(name = "vocation", length = 20)
 	public String getVocation() {
 		return this.vocation;
 	}
@@ -179,7 +179,7 @@ public class User implements java.io.Serializable {
 		this.vocation = vocation;
 	}
 
-	@Column(name = "PROFILE", length = 200)
+	@Column(name = "profile", length = 200)
 	public String getProfile() {
 		return this.profile;
 	}
@@ -189,7 +189,7 @@ public class User implements java.io.Serializable {
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "REGTIME", length = 19)
+	@Column(name = "regtime", length = 19)
 	public Date getRegtime() {
 		return this.regtime;
 	}

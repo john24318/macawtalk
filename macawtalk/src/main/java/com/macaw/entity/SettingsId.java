@@ -1,6 +1,6 @@
 package com.macaw.entity;
 
-// Generated 2012/7/15 ¤U¤È 10:39:42 by Hibernate Tools 3.4.0.CR1
+// Generated 2012/7/17 ¤U¤È 09:38:47 by Hibernate Tools 3.4.0.CR1
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -24,7 +24,7 @@ public class SettingsId implements java.io.Serializable {
 		this.setname = setname;
 	}
 
-	@Column(name = "SETKEY", nullable = false, length = 10)
+	@Column(name = "setkey", nullable = false, length = 10)
 	public String getSetkey() {
 		return this.setkey;
 	}
@@ -33,7 +33,7 @@ public class SettingsId implements java.io.Serializable {
 		this.setkey = setkey;
 	}
 
-	@Column(name = "SETDESC", nullable = false, length = 50)
+	@Column(name = "setdesc", nullable = false, length = 50)
 	public String getSetdesc() {
 		return this.setdesc;
 	}
@@ -42,7 +42,7 @@ public class SettingsId implements java.io.Serializable {
 		this.setdesc = setdesc;
 	}
 
-	@Column(name = "SETNAME", nullable = false, length = 30)
+	@Column(name = "setname", nullable = false, length = 30)
 	public String getSetname() {
 		return this.setname;
 	}
